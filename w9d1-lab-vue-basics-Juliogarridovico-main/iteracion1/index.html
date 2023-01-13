@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prueba Vue</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+  </head>
+
+  <body>
+    <div id="iteraciones">
+      <h1>Iteracion 1,2</h1>
+      <input v-model="message" placeholder="edíteme" />
+      <p>El mensaje es: {{ message }}</p>
+      <h1>Iteracion 3</h1>
+      <div v-if="boleana === true">
+        <button v-on:click="boleana = false">Cambia valor</button>
+        <p>
+          Teacher esto esta dentro de un condicional y marca qu ela variable
+          boleana es: {{boleana}}
+        </p>
+      </div>
+      <div v-if="boleana === false">
+        <button v-on:click="boleana = true">cambia la variable a true</button>
+        <p>al pulsar el boton de arriba {{boleana}}</p>
+      </div>
+      <h1>Iteracion 4</h1>
+      <ul>
+        <li v-for="item in megaArray">{{ item }}</li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#iteraciones",
+        data: {
+          megaArray: ["uno", "dos", "tres"],
+          message: "Hola Vue!",
+          boleana: true,
+        },
+      });
+    </script>
+  </body>
+</html>
